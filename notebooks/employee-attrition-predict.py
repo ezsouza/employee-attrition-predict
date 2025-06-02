@@ -1,21 +1,30 @@
-import pandas as pd
+import os
+import warnings
+
+import joblib
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.model_selection import train_test_split, cross_val_score, KFold, StratifiedKFold
-from sklearn.preprocessing import StandardScaler, OneHotEncoder, OrdinalEncoder
-from sklearn.compose import ColumnTransformer
-from sklearn.pipeline import Pipeline
-from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix, roc_curve, auc, classification_report
-from sklearn.impute import SimpleImputer
-import warnings
+
 from imblearn.over_sampling import SMOTE
-from statsmodels.stats.outliers_influence import variance_inflation_factor
-from scipy.stats import chi2_contingency
-import joblib
-import os
+from sklearn.compose import ColumnTransformer
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.impute import SimpleImputer
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import (
+    accuracy_score,
+    precision_score,
+    recall_score,
+    f1_score,
+    confusion_matrix,
+    roc_curve,
+    auc,
+    classification_report,
+)
+from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
 
 # Configuration
 RANDOM_STATE = 42
